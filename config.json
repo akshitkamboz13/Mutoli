@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Mutoli - Natural honey fuel for fitness enthusiasts",
+    "description": "Natural honey fuel for fitness enthusiasts. Pre-workout energy, post-workout recovery. Pure, natural fuel for athletes and weight management.",
+    "url": "https://mutoli.tech",
+    "tagline": "Natural fuel for athletes and fitness enthusiasts"
+  },
+  "brand": {
+    "name": "Mutoli",
+    "colors": {
+      "primary": "#F9B233",
+      "primaryDark": "#E6A429",
+      "background": "#FFFFFF",
+      "text": "#374151"
+    },
+    "fonts": {
+      "primary": "Poppins",
+      "weights": [300, 400, 500, 600, 700, 800]
+    }
+  },
+  "products": [
+    {
+      "id": "250g-jar",
+      "name": "250g Jar",
+      "price": "₹120",
+      "shipping": "+ shipping",
+      "description": "Best for home/gym use",
+      "features": [
+        "Perfect for daily use",
+        "4-6 weeks supply",
+        "Best value for regular users"
+      ],
+      "image": "250g-jar.jpg"
+    },
+    {
+      "id": "4-pouch-combo",
+      "name": "50g × 4 Pouch Combo",
+      "price": "₹150",
+      "shipping": "+ shipping",
+      "description": "Travel-friendly, easy to carry",
+      "features": [
+        "Perfect for travel",
+        "Convenient portions",
+        "Resealable pouches"
+      ],
+      "image": "4-pouch-combo.jpg",
+      "badge": "Most Popular"
+    },
+    {
+      "id": "30-sachets",
+      "name": "6g × 30 Sachets Set",
+      "price": "₹140",
+      "shipping": "+ shipping",
+      "description": "Daily-use convenience pack",
+      "features": [
+        "30-day supply",
+        "Pre-measured portions",
+        "Ultimate convenience"
+      ],
+      "image": "30-sachets-box.jpg"
+    }
+  ],
+  "contact": {
+    "email": "akshitkamboz13@gmail.com",
+    "whatsapp": "+918813017827",
+    "whatsappLink": "https://wa.me/+918813017827"
+  },
+  "payment": {
+    "upiId": "mutoli@ptyes",
+    "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLScX4DfQZRPpavSmo0WOPTXkXtHzrkPKeeTTNzdEZWZdYXg55w/viewform?usp=dialog",
+    "limitedStock": 100
+  },
+  "social": {
+    "instagram": "#",
+    "facebook": "#",
+    "twitter": "#"
+  },
+  "story": {
+    "founderQuote": "Mutoli was born for fitness lovers who want natural, pure energy instead of chemicals. After years of relying on artificial supplements, I discovered the incredible power of pure honey. It transformed my workouts and recovery, and I knew I had to share this with fellow fitness enthusiasts.",
+    "mission": "To provide fitness enthusiasts with the purest, most natural energy source that supports both performance and recovery without compromising health.",
+    "promise": "Every jar of Mutoli is carefully sourced and tested to ensure you get nothing but pure, natural honey that fuels your fitness journey."
+  },
+  "features": [
+    {
+      "icon": "fas fa-bolt",
+      "title": "Energy Booster",
+      "description": "Natural sugars provide instant and sustained energy for your workouts and daily activities"
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "title": "100% Pure",
+      "description": "No chemicals, no additives, no artificial ingredients - just pure, natural honey"
+    },
+    {
+      "icon": "fas fa-heart",
+      "title": "Recovery Support",
+      "description": "Antioxidants and natural compounds help your body recover faster after intense training"
+    }
+  ],
+  "seo": {
+    "keywords": "honey, energy, recovery, fitness, natural, pure, pre-order, Mutoli",
+    "author": "Mutoli Team",
+    "language": "en"
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "facebookPixelId": "",
+    "hotjarId": ""
+  }
+}

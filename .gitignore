@@ -1,0 +1,183 @@
+# Mutoli Order Management System - Git Ignore Configuration
+# Optimized for actual project files
+
+# =============================================================================
+# DEVELOPMENT/TEST FILES - DO NOT COMMIT TO PRODUCTION
+# =============================================================================
+
+# Test HTML files (present in project)
+clean-test.html
+icon-test.html
+test-images.html
+
+# Development backup files (present in project)
+google-apps-script-v2-clean.js
+script-backup.js
+
+# Any future test/backup files
+test-*.html
+*-test.html
+*-backup.*
+*-old.*
+*.bak
+
+# =============================================================================
+# DEVELOPMENT TOOLS & BROWSER AUTOMATION
+# =============================================================================
+
+# Playwright MCP screenshots (present in project)
+.playwright-mcp/
+
+# Node.js (if added later)
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# =============================================================================
+# CONFIGURATION & SECRETS
+# =============================================================================
+
+# Environment variables
+.env*
+
+# Local configuration overrides
+config-local.json
+local-config.*
+DEPLOYMENT-CHECKLIST.md
+PRODUCTION-STATUS.md
+
+# Sensitive data
+api-keys.txt
+credentials.json
+secrets.json
+
+# =============================================================================
+# IDE & EDITOR FILES
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+
+# Other IDEs
+.idea/
+*.sublime-*
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# =============================================================================
+# LOGS & TEMPORARY FILES
+# =============================================================================
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# =============================================================================
+# ARCHIVES & LARGE FILES
+# =============================================================================
+
+# Archive files
+*.zip
+*.rar
+*.7z
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+
+# Design source files
+*.psd
+*.ai
+*.sketch
+
+# =============================================================================
+# GOOGLE SERVICES & ORDER DATA
+# =============================================================================
+
+# Google Sheets exports (order data)
+*.xlsx
+*.xls
+orders-export-*.csv
+customer-data-*.csv
+
+# Apps Script backups
+gas-backup/
+
+# =============================================================================
+# DEPLOYMENT & HOSTING
+# =============================================================================
+
+# Hosting configurations
+.netlify/
+.vercel/
+.firebase/
+
+# FTP/SFTP configs
+.ftpconfig
+.sftp-config.json
+
+# =============================================================================
+# BUSINESS DATA & ANALYTICS
+# =============================================================================
+
+# Customer data exports
+customer-reports/
+order-analytics/
+business-reports/
+
+# Performance reports
+lighthouse-reports/
+performance-data/
+
+# =============================================================================
+# WHAT STAYS IN REPOSITORY (PRODUCTION FILES)
+# =============================================================================
+
+# ✅ Main website files
+# index.html
+# script.js  
+# styles.css
+# google-apps-script-v2.js
+
+# ✅ Policy pages
+# privacy.html
+# terms.html
+# refund.html
+
+# ✅ Documentation
+# README.md
+# README-PRODUCTION.md
+
+# ✅ Configuration
+# config.json
+# CNAME
+
+# ✅ Assets
+# assets/images/ (all product images and logo)
+
+# ✅ This gitignore file
+# .gitignore
