@@ -274,8 +274,8 @@
                         </svg>
                     </button>
                     
-                    <button class="text-gray-700 dark:text-gray-300 hover:text-honey dark:hover:text-honey transition-colors duration-300" id="mobile-menu-btn">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="text-gray-700 dark:text-gray-300 hover:text-honey dark:hover:text-honey transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
@@ -447,7 +447,7 @@
                 <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 italic">*Product design and packaging may vary from images shown</p>
             </div>
             <!-- Mobile: Horizontal Scroll, Desktop: Grid -->
-            <div class="flex gap-6 overflow-x-auto pb-4 px-4 -mx-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 max-w-6xl mx-auto sm:overflow-visible sm:px-0 sm:mx-auto scrollbar-hide">
+            <div class="flex gap-6 overflow-x-auto pb-4 pt-6 px-4 -mx-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 max-w-6xl mx-auto sm:overflow-visible sm:px-0 sm:mx-auto sm:pt-0 scrollbar-hide">
                 <!-- Product cards will scroll horizontally on mobile -->
                 
                 <!-- 250g Jar -->
@@ -481,7 +481,7 @@
                 <!-- 50g × 4 Pouch Combo -->
                 <div class="bg-white dark:bg-dark-700 rounded-2xl p-6 sm:p-8 shadow-lg dark:shadow-dark-900/50 hover:shadow-xl dark:hover:shadow-dark-900/70 transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-dark-600 product-card relative min-w-[280px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
                     <!-- Popular Badge -->
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div class="absolute -top-4 sm:-top-4 -top-2 left-1/2 transform -translate-x-1/2">
                         <span class="bg-honey text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">Most Popular</span>
                     </div>
                     
@@ -591,7 +591,7 @@
                 <div id="step1-content" class="bg-gray-50 dark:bg-dark-800 rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 border border-gray-200 dark:border-dark-600">
                     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Step 1: Select Your Product</h3>
                     
-                    <div class="flex gap-4 overflow-x-auto pb-4 px-4 -mx-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 mb-6 sm:mb-8 sm:overflow-visible sm:px-0 sm:mx-0 scrollbar-hide">
+                    <div class="flex gap-4 overflow-x-auto pb-4 pt-4 px-4 -mx-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 mb-6 sm:mb-8 sm:overflow-visible sm:px-0 sm:mx-0 sm:pt-0 scrollbar-hide">
                         <!-- 250g Jar -->
                         <div class="bg-white dark:bg-dark-700 rounded-xl p-4 sm:p-6 border-2 border-gray-200 dark:border-dark-600 hover:border-honey dark:hover:border-honey transition-colors cursor-pointer product-option min-w-[240px] sm:min-w-0 flex-shrink-0 sm:flex-shrink" data-product="250g-jar">
                             <div class="bg-gradient-to-br from-honey/10 to-orange-500/10 dark:from-honey/5 dark:to-orange-500/5 rounded-lg p-3 mb-4">
@@ -604,7 +604,7 @@
                         
                         <!-- 4 Pouch Combo -->
                         <div class="bg-white dark:bg-dark-700 rounded-xl p-4 sm:p-6 border-2 border-gray-200 dark:border-dark-600 hover:border-honey dark:hover:border-honey transition-colors cursor-pointer product-option relative min-w-[240px] sm:min-w-0 flex-shrink-0 sm:flex-shrink" data-product="4-pouch-combo">
-                            <div class="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                            <div class="absolute -top-2 sm:-top-2 -top-1 left-1/2 transform -translate-x-1/2">
                                 <span class="bg-honey text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">Popular</span>
                             </div>
                             <div class="bg-gradient-to-br from-honey/10 to-orange-500/10 dark:from-honey/5 dark:to-orange-500/5 rounded-lg p-3 mb-4">
@@ -1027,37 +1027,64 @@
 
         // Enhanced Mobile Navigation
         function initMobileNav() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
+            // Wait a bit to ensure DOM is fully ready
+            setTimeout(() => {
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                
+                console.log('Mobile menu elements:', { mobileMenuBtn, mobileMenu, linksCount: mobileNavLinks.length });
+                
+                if (mobileMenuBtn && mobileMenu) {
+                    // Remove any existing event listeners
+                    mobileMenuBtn.replaceWith(mobileMenuBtn.cloneNode(true));
+                    const newMobileMenuBtn = document.getElementById('mobile-menu-btn');
                     
-                    // Animate hamburger icon
-                    const icon = mobileMenuBtn.querySelector('svg');
-                    icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-                });
-                
-                // Close mobile menu when clicking nav links
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden');
-                        const icon = mobileMenuBtn.querySelector('svg');
-                        icon.style.transform = 'rotate(0deg)';
+                    newMobileMenuBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Mobile menu button clicked');
+                        
+                        mobileMenu.classList.toggle('hidden');
+                        
+                        // Animate hamburger icon
+                        const icon = newMobileMenuBtn.querySelector('svg');
+                        if (icon) {
+                            icon.style.transition = 'transform 0.3s ease';
+                            icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                        }
                     });
-                });
-                
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                        mobileMenu.classList.add('hidden');
-                        const icon = mobileMenuBtn.querySelector('svg');
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-                });
-            }
+                    
+                    // Close mobile menu when clicking nav links
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            mobileMenu.classList.add('hidden');
+                            const icon = newMobileMenuBtn.querySelector('svg');
+                            if (icon) {
+                                icon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                    });
+                    
+                    // Close mobile menu when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (!newMobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                            mobileMenu.classList.add('hidden');
+                            const icon = newMobileMenuBtn.querySelector('svg');
+                            if (icon) {
+                                icon.style.transform = 'rotate(0deg)';
+                            }
+                        }
+                    });
+                    
+                    console.log('Mobile menu initialized successfully');
+                } else {
+                    console.error('Mobile menu elements not found:', { 
+                        btn: !!mobileMenuBtn, 
+                        menu: !!mobileMenu 
+                    });
+                }
+            }, 100);
         }
 
         // Enhanced Navbar Scroll Effect
